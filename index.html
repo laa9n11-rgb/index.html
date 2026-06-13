@@ -81,24 +81,16 @@
             document.getElementById('modalTitle').innerText = 'Заказ: ' + productInfo;
             document.getElementById('orderModal').style.display = 'flex';
         }
-
         function closeOrder() {
             document.getElementById('orderModal').style.display = 'none';
             document.getElementById('telegramNick').value = ''; // Очищаем поле ввода
         }
 
-        function sendOrder() {
+                function sendOrder() {
             const tgNick = document.getElementById('telegramNick').value.trim();
             
             if(!tgNick) {
-                alert('⚠️ Пожалуйста, введи свой ник, чтобы мы могли связаться!');
-                return;
-            }
-
-            // Умная заглушка, чтобы сайт не выдавал ошибку, пока мы не вписали токены
-            if(BOT_TOKEN === '8699426811:AAFgCB4ALV2czHzrNzjBNrdRellAF9mFif8') {
-                alert('✅ Тестовый заказ сформирован! (Чтобы реальные заказы летели в Telegram, позже добавим токен).');
-                closeOrder();
+                alert('⚠️ Пожалуйста, введи свой ник!');
                 return;
             }
 
@@ -108,16 +100,16 @@
             fetch(url)
             .then(response => {
                 if(response.ok) {
-                    alert('✅ Заказ успешно отправлен! Наш менеджер свяжется с тобой.');
+                    alert('✅ Заказ успешно отправлен!');
                     closeOrder();
                 } else {
-                    alert('❌ Ошибка отправки. Проверь токен бота и Chat ID.');
+                    alert('❌ Ошибка отправки. Проверь токен и Chat ID.');
                 }
             })
             .catch(err => {
-                alert('❌ Ошибка сети. Проверь подключение к интернету.');
+                alert('❌ Ошибка сети.');
             });
-        }
+                }
     </script>
 </body>
 </html>
