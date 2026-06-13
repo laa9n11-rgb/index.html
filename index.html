@@ -42,28 +42,28 @@
 
     <div class="shop-container">
         <div class="product-card">
-            <div class="product-title">Товар #1 (Базовый)</div>
+            <div class="product-title">сопровождение (Базовый)</div>
             <div class="product-price">500 ₴</div>
-            <button class="btn" onclick="openOrder('Товар #1 (500 ₴)')">Купить</button>
+            <button class="btn" onclick="openOrder('сопровождение (500 ₴)')">Купить</button>
         </div>
 
         <div class="product-card">
-            <div class="product-title">Товар #2 (Премиум)</div>
-            <div class="product-price">1200 ₴</div>
-            <button class="btn" onclick="openOrder('Товар #2 (1200 ₴)')">Купить</button>
+            <div class="product-title">фулл 6 (Премиум)</div>
+            <div class="product-price">120 ₴</div>
+            <button class="btn" onclick="openOrder('фулл 6 (120 ₴)')">Купить</button>
         </div>
         
         <div class="product-card">
-            <div class="product-title">Товар #3 (VIP Доступ)</div>
-            <div class="product-price">2500 ₴</div>
-            <button class="btn" onclick="openOrder('Товар #3 (2500 ₴)')">Купить</button>
+            <div class="product-title">фулл 6 ст +мк вк (VIP Доступ)</div>
+            <div class="product-price">150 ₴</div>
+            <button class="btn" onclick="openOrder('фулл 6 ст +мк вк (150 ₴)')">Купить</button>
         </div>
     </div>
 
     <div class="modal" id="orderModal">
         <div class="modal-content">
             <h3 id="modalTitle">Оформление заказа</h3>
-            <input type="text" id="telegramNick" placeholder="Твой ник в Telegram (@nick)" required>
+            <input type="text" id="telegramNick" placeholder="@MAPAT1337" required>
             <button class="btn" onclick="sendOrder()">Отправить заказ</button>
             <button class="btn close-btn" onclick="closeOrder()">Отмена</button>
         </div>
@@ -73,7 +73,7 @@
         let currentProduct = '';
         
         // ВНИМАНИЕ: Сюда мы позже добавим твои настоящие данные, чтобы уведомления летели в ТГ!
-        const BOT_TOKEN = 'СЮДА_ВСТАВЬ_ТОКЕН_ОТ_BOTFATHER';
+        const BOT_TOKEN = '8699426811:AAFgCB4ALV2czHzrNzjBNrdRellAF9mFif8';
         const CHAT_ID = '@MAPAT1337';
 
         function openOrder(productInfo) {
