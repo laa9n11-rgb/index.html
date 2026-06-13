@@ -34,7 +34,14 @@
         
         .close-btn { background: #333; color: #fff; margin-top: 10px; box-shadow: none; }
         .close-btn:hover { background: #444; opacity: 1; box-shadow: none; }
-    </style>
+    </style> @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.product-card { /* или класс твоего блока с товаром */
+    animation: fadeIn 0.8s ease-in;
+}
 </head>
 <body>
 
