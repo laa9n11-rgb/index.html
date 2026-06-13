@@ -34,14 +34,24 @@
         
         .close-btn { background: #333; color: #fff; margin-top: 10px; box-shadow: none; }
         .close-btn:hover { background: #444; opacity: 1; box-shadow: none; }
-    </style> @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
+        .close-btn:hover { background: #444; opacity: 1; }
 
-.product-card { /* или класс твоего блока с товаром */
-    animation: fadeIn 0.8s ease-in;
-}
+    /* Вставляй сюда: */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    .product-card {
+        animation: fadeIn 0.8s ease-in;
+    }
+    /* Конец вставки */
+
+</style> ```
+
+**Почему так:** Всё, что отвечает за внешний вид и анимации, должно жить строго внутри `<style>...</style>`. Как только ты это переместишь внутрь, карточки сразу начнут плавно появляться при загрузке страницы. Попробуй перенести, и всё заработает!
+
+    </style>
 </head>
 <body>
 
@@ -51,7 +61,9 @@
         <div class="product-card">
             <div class="product-title">сопровождение (Базовый)</div>
             <div class="product-price">500 ₴</div>
-            <button class="btn" onclick="openOrder('сопровождение (500 ₴)')">Купить</button>
+            <button class="btn    .close-btn:hover { background: #444; opacity: 1; }
+
+                " onclick="openOrder('сопровождение (500 ₴)')">Купить</button>
         </div>
 
         <div class="product-card">
@@ -66,7 +78,6 @@
             <button class="btn" onclick="openOrder('фулл 6 ст +мк вк (150 ₴)')">Купить</button>
         </div>
     </div>
-
     <div class="modal" id="orderModal">
         <div class="modal-content">
             <h3 id="modalTitle">Оформление заказа</h3>
