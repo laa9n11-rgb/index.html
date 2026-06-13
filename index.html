@@ -85,11 +85,12 @@ const CHAT_ID = '6120501276';
             document.getElementById('telegramNick').value = ''; // Очищаем поле ввода
         }
 
-                function sendOrder() {
+        function sendOrder() {
             const tgNick = document.getElementById('telegramNick').value.trim();
             
-            if(!tgNick) {
-                alert('⚠️ Пожалуйста, введи свой ник!');
+            // Проверка: ник должен начинаться с @ и быть длиннее 3 символов
+            if(!tgNick.startsWith('@') || tgNick.length < 4) {
+                alert('⚠️ Пожалуйста, введи ник в формате @username');
                 return;
             }
 
